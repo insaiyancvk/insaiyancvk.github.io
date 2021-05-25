@@ -4986,6 +4986,13 @@ a img {
     margin: 10px
 }
 
+.tech div {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+  }
+
 .user {
     text-align: center;
     font-size: 60px;
@@ -5010,6 +5017,13 @@ a img {
     text-align: center;
     margin: 5px auto
 }
+
+.user-details div {
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 80px;
+  }
 
 #projects {
     display: flex;
@@ -5063,7 +5077,9 @@ a img {
     .contents-right,
     .images-right {
         float: right;
-        width: 48%
+        width: 48%;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .images-right img {
@@ -5072,7 +5088,9 @@ a img {
 
     .images-left {
         float: left;
-        width: 48%
+        width: 48%;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .images-left img {

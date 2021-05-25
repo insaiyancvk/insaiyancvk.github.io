@@ -26,6 +26,9 @@
 
     <!-- Import CSS: Main Stylesheet -->
     <link rel="stylesheet" href="./assets/css/main.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   </head>
 
   <body>
@@ -35,6 +38,7 @@
           <span class="site-title">C Vamshi Krishna</span>
         </h1>
         <span id="typed" style="font-size: 50px;"></span>
+        <div data-aos="fade-up">
         <div class="header-icons">
           <a
             aria-label="My LinkedIn Profile"
@@ -87,12 +91,14 @@
           <a class="link" href="#projects" data-scroll>Projects</a>
         </div>
       </div>
+      </div>
       <a class="down" href="#about" data-scroll
         ><i class="icon fa fa-chevron-down" aria-hidden="true"></i
       ></a>
     </div>
 
     <!-- About Section -->
+    <div data-aos="zoom-out">
     <section id="about">
       <!-- User Introduction-->
       <div class="user-details">
@@ -111,12 +117,15 @@
           opportunities for the same.
         </p>
       </div>
+    </div>
 
       <!-- User Specifics -->
       <div class="user">
         <!-- Technology Stack #1: Languages -->
+        
         <div class="tech">
           <h2>Languages</h2>
+          <div data-aos="fade-right">
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
           <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
           <i class="devicon-python-plain colored"></i>
@@ -129,10 +138,12 @@
             data analysis.
           </p>
         </div>
+      </div>
 
         <!-- Technology Stack #2: Front-End -->
         <div class="tech">
           <h2>Front-End</h2>
+          <div data-aos="zoom-in">
           <!-- <i class="devicon-flutter-plain colored"></i> -->
           <i class="devicon-flutter-plain colored"></i>
           <i class="devicon-android-plain colored"></i>
@@ -141,10 +152,13 @@
             component design.
           </p>
         </div>
+      </div>
 
         <!-- Technology Stack #3: Tools -->
+        
         <div class="tech">
           <h2>Tools</h2>
+          <div data-aos="fade-down-right">
           <i class="devicon-git-plain colored"></i>
           <i class="devicon-visualstudio-plain colored"></i>
           <i class="devicon-github-plain colored"></i>
@@ -156,6 +170,7 @@
           </p>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
@@ -165,6 +180,7 @@
       </div>
 
       <!-- Project #1: Music Downloader -->
+      <div data-aos="zoom-in-up">
       <div class="user-projects">
         <div class="images-right">
           <img
@@ -218,8 +234,11 @@
           >
         </div>
       </div>
+    </div>
+  </div>
 
       <!-- Project #2: Datalocker -->
+      <div data-aos="zoom-in-up">
       <div class="user-projects">
         <div class="images-left">
           <img
@@ -257,8 +276,10 @@
           >
         </div>
       </div>
+      </div>
 
       <!-- Project #3: TwitterStalker -->
+      <div data-aos="zoom-in-up">
       <div class="user-projects">
         <div class="images-right">
           <img
@@ -306,8 +327,10 @@
           </a>
         </div>
       </div>
+      </div>
 
       <!-- Project #4: Sentibot -->
+      <div data-aos="zoom-in-up">
       <div class="user-projects">
         <div class="images-left">
           <img
@@ -349,8 +372,10 @@
           </a>
         </div>
       </div>
+      </div>
 
       <!-- Project #5: Dog Vision -->
+      <div data-aos="zoom-in-up">
       <div class="user-projects">
         <div class="images-right">
           <img
@@ -397,8 +422,10 @@
           </a>
         </div>
       </div>
+      </div>
       
       <!-- Project #6: GetGitDetails -->
+      <div data-aos="zoom-in-up">
       <div class="user-projects">
         <div class="images-left">
           <img
@@ -433,6 +460,7 @@
           </a>
         </div>
       </div>
+      </div>
 
     </section>
 
@@ -464,6 +492,11 @@
     </script>
     <!-- Import JS: Main Script -->
     <script src="./assets/js/main.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 
   </body>
 </html>
