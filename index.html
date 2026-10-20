@@ -1,226 +1,298 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Metadata of the Webpage -->
-    <!-- Character-set Metadata -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Viewport Metadata -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Description Metadata-->
-    <meta name="description" content="Portfolio Website" />
-    <!-- Author Metadata -->
-    <meta name="author" content="C Vamshi Krishna" />
-    <!-- Keyword Metadata -->
-    <meta
-      name="keywords"
-      content="Vamshi Krishna, Vamshi, Krishna, Chilukuri, Chilukuri Vamshi, Chilukuri Vamshi Krishna
-        C Vamshi Krishna, C Vamshi Krishna Bangalore, 
-        C Vamshi Krishna Amrita University, cvk,
-        C Vamshi Krishna Website, insaiyancvk"
-    />
-    <!-- Webpage Logo -->
-    <link rel="shortcut icon" href="./assets/img/favicon.ico" />
-    <!-- Webpage Title -->
-    <title>C Vamshi Krishna</title>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vamshi Krishna — builder and network engineer</title>
+<meta name="description" content="I build systems with AI agents and deploy data-centre networks at Arista. Trading systems, network fabrics, strength training and the inner game, as one connected picture.">
+<meta name="author" content="Vamshi Krishna">
+<link rel="canonical" href="https://insaiyancvk.github.io/">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0c0d0f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Vamshi Krishna">
+<meta property="og:title" content="Vamshi Krishna — builder and network engineer">
+<meta property="og:description" content="I build systems with AI agents and deploy data-centre networks at Arista. One person, many connected threads.">
+<meta property="og:url" content="https://insaiyancvk.github.io/">
+<meta property="og:image" content="https://insaiyancvk.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vamshi Krishna — builder and network engineer">
+<meta name="twitter:description" content="I build systems with AI agents and deploy data-centre networks at Arista.">
+<meta name="twitter:image" content="https://insaiyancvk.github.io/assets/img/og.png">
+<link rel="preload" href="assets/fonts/InstrumentSerif-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Geist-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Vamshi Krishna","url":"https://insaiyancvk.github.io/","jobTitle":"Network engineer","worksFor":{"@type":"Organization","name":"Arista Networks"},"address":{"@type":"PostalAddress","addressLocality":"Bangalore","addressCountry":"IN"},"sameAs":["https://github.com/insaiyancvk","https://www.linkedin.com/in/insaiyancvk/","https://x.com/insaiyancvk"]}</script>
+<style>
+@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/Geist-normal.woff2) format('woff2')}
+@font-face{font-family:'Geist Mono';font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/GeistMono-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/InstrumentSerif-normal.woff2) format('woff2')}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/InstrumentSerif-italic.woff2) format('woff2')}
 
-    <!-- Import CSS: Main Stylesheet -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
+/* Layout: left-aligned editorial column. Mono rail labels on the left, serif display, one saffron accent used for connections. */
+:root{
+  --bg:#0c0d0f; --fg:#ebe8e1; --mute:#8d8c86; --line:#24262b; --card:#131418;
+  --accent:#ff9f1c; --accent-soft:rgba(255,159,28,.14);
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Geist Mono',ui-monospace,Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){:root{
+  --bg:#f3f4f5; --fg:#121316; --mute:#5f6269; --line:#d9dbde; --card:#fff;
+  --accent:#b85c00; --accent-soft:rgba(184,92,0,.12); color-scheme:light}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);overflow-x:hidden;
+  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#111;padding:8px 12px;z-index:9}
+.skip:focus{left:8px}
+.wrap{max-width:1040px;margin:0 auto}
+.mono{font-family:var(--mono)}
+.label{font:500 12px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;font:500 13px var(--mono)}
+nav .mark{font-family:var(--serif);font-size:26px;text-decoration:none;letter-spacing:-.01em}
+nav ul{display:flex;gap:clamp(12px,3vw,28px);list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--mute)} nav a:hover{color:var(--fg)}
 
-    <link rel="stylesheet" href="./assets/css/hoverbuttons.css">
+.hero{padding-block:clamp(40px,9vw,110px) clamp(48px,8vw,96px);display:flex;flex-direction:column;gap:clamp(24px,4vw,40px)}
+h1{font:400 clamp(3.4rem,13.5vw,9rem)/.88 var(--serif);letter-spacing:-.035em;margin:0;text-wrap:balance}
+h1 em{color:var(--accent)}
+.lede{max-width:34ch;font-size:clamp(1.15rem,3.6vw,1.5rem);line-height:1.4;margin:0}
+.lede span{color:var(--mute)}
+.breath{font:italic 400 clamp(1.45rem,5.2vw,2.6rem)/1.22 var(--serif);max-width:26em;margin:0;color:var(--mute);text-wrap:pretty}
+.breath .w{transition:color .5s ease}
+.breath .w.on{color:var(--fg)}
+.breath .w.hot{color:var(--accent)}
 
-    <style>
-        .avatar {
-          vertical-align: middle;
-          width: 180px;
-          height: 200px;
-          border-radius: 50%;
-        }
-    </style>
-    
+section{padding-block:clamp(36px,6vw,72px);border-top:1px solid var(--line)}
+.sec{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+@media (min-width:820px){.sec{grid-template-columns:180px minmax(0,1fr);gap:40px}}
+h2{font:400 clamp(2rem,6vw,3.4rem)/1 var(--serif);letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+.prose{display:flex;flex-direction:column;gap:16px;max-width:62ch}
+.prose p{margin:0}
 
-  </head>
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px;margin-top:8px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .25s,transform .25s}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card h3{font:400 1.9rem/1 var(--serif);margin:0;letter-spacing:-.01em}
+.card p{margin:0;color:var(--mute);font-size:.97rem}
+.card .stack{margin-top:auto;padding-top:6px;font:400 12px/1.5 var(--mono);color:var(--accent)}
+.earlier{margin-top:22px;color:var(--mute);font-size:.95rem;max-width:62ch}
 
-  <body>
-    <div id="particles-js">
-      <div class="header">
-        <h1>
-          <span class="site-title">C Vamshi Krishna</span>
-        </h1>
-        <span id="typed" style="font-size: 50px;"></span>
-        <div data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-in-out">
-        <div class="header-icons">
-          <a
-            aria-label="My LinkedIn Profile"
-            target="_blank"
-            href="https://www.linkedin.com/in/insaiyancvk/"
-          >
-            <i class="icon fa fa-linkedin" aria-hidden="true"></i>
-          </a>
-          <a
-            aria-label="My Github Profile"
-            target="_blank"
-            href="https://github.com/insaiyancvk"
-          >
-            <i class="icon fa fa-github-alt" aria-hidden="true"></i>
-          </a>
-          <!-- <a
-            aria-label="My Résumé"
-            target="_blank"
-            href=""
-          >
-            <i class="icon fa fa fa-file-pdf-o" aria-hidden="true"></i>
-          </a> -->
-          <a
-            aria-label="Send Email"
-            href="mailto:cvamshik1@gmail.com"
-            target="_blank"
-            ><i class="icon fa fa-envelope"></i
-          ></a>
-          <a
-          aria-label="Resume"
-          href="./assets/Vamshi Krishna resume.pdf"
-          target="_blank"
-          ><i class="icon fa fa-file"></i></a>
-          <a
-          aria-label="Telegram"
-          href="https://telegram.com/insaiyancvk"
-          target="_blank"
-          ><i class="icon fa fa-telegram"></i></a>
-          <a
-          aria-label="twitter"
-          href="https://twitter.com/insaiyancvk"
-          target="_blank"
-          ><i class="icon fa fa-twitter"></i></a>
+.facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:minmax(76px,120px) minmax(0,1fr);gap:8px 20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.facts .n{font:400 clamp(2.4rem,8vw,3.6rem)/.9 var(--serif);color:var(--accent);letter-spacing:-.02em}
+.facts p{margin:0}
+.facts p small{display:block;color:var(--mute);font-size:.92rem;margin-top:4px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.badges span{font:500 12px var(--mono);border:1px solid var(--line);padding:7px 11px;border-radius:99px;color:var(--mute)}
 
-          <a
-          aria-label="instagram"
-          href="https://instagram.com/in.saiyan.cvk"
-          target="_blank"
-          ><i class="icon fa fa-instagram"></i></a>
+.threads{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:6px}
+@media (min-width:900px){.threads{grid-template-columns:minmax(0,460px) minmax(0,1fr);align-items:start}}
+svg.map{width:100%;height:auto;max-width:520px;display:block;overflow:visible}
+.map .e{stroke:var(--line);stroke-width:1.2;transition:stroke .25s,stroke-width .25s}
+.map .e.on{stroke:var(--accent);stroke-width:2.2}
+.map .nd{fill:var(--bg);stroke:var(--mute);stroke-width:1.5;transition:fill .25s,stroke .25s}
+.map g.n{cursor:pointer;outline:none}
+.map g.n.on .nd,.map g.n:focus-visible .nd{fill:var(--accent);stroke:var(--accent)}
+.map text{font:500 12.5px var(--mono);fill:var(--fg)}
+.map g.dim text{fill:var(--mute)}
+.pairs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.pairs li{padding:14px 14px;border-left:2px solid var(--line);transition:border-color .25s,background .25s}
+.pairs li.on{border-color:var(--accent);background:var(--accent-soft)}
+.pairs b{display:block;font:500 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
+.pairs p{margin:0;color:var(--mute);font-size:.97rem}
+.note{color:var(--mute);font-size:.95rem;margin-top:18px;max-width:62ch}
 
-        </div>
-        <div class="header-links">
-          <a class="hbtn hb-fill-top-rev" href="#about" data-scroll>About Me</a>
-          <a class="hbtn hb-fill-top-rev" href="./pages/projects.html">Projects</a>
-        </div>
-      </div>
-      </div>
-      <a class="down" href="#about" data-scroll
-        ><i class="icon fa fa-chevron-down" aria-hidden="true"></i
-      ></a>
+.contact{display:flex;flex-wrap:wrap;gap:10px 14px;font:500 14px var(--mono);margin-top:6px}
+.contact a{padding:10px 14px;border:1px solid var(--line);border-radius:99px;text-decoration:none}
+.contact a:hover{border-color:var(--accent);color:var(--fg)}
+.mail{font:400 clamp(1.4rem,5vw,2.4rem)/1.1 var(--serif);margin:0 0 18px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--mute);font:400 12.5px/1.6 var(--mono);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.breath .w,.map *{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="mark" href="#top" aria-label="Vamshi Krishna, top of page">vk</a>
+  <ul>
+    <li><a href="#built">Built</a></li>
+    <li><a href="#arista">Arista</a></li>
+    <li><a href="#threads">Threads</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+<header class="hero" id="top">
+  <div class="label">Bangalore · builder · network engineer</div>
+  <h1>Vamshi<br><em>Krishna</em></h1>
+  <p class="lede">I build with AI agents. At Arista I deploy data-centre networks. <span>The rest of the time I lift, sit still, and try to see how it all connects.</span></p>
+  <p class="breath" id="breath" aria-label="In a single breath I can talk about trading systems, Adiyogi, traffic flows through a VXLAN fabric, a VPN, and the gym.">In a single breath I can talk about <span class="k">trading systems</span>, <span class="k">Adiyogi</span>, <span class="k">traffic flows</span> through a <span class="k">VXLAN</span> fabric, a <span class="k">VPN</span>, and the <span class="k">gym</span>. It is all one subject.</p>
+</header>
+
+<section id="about" aria-labelledby="h-about"><div class="sec">
+  <div class="label">Who I am</div>
+  <div>
+    <h2 id="h-about">Builder first.</h2>
+    <div class="prose">
+      <p>I used to write code by hand. Now I architect systems and direct AI agents to build them, then I check the work. I run a whole fleet of agents across my projects and manage them like a small team.</p>
+      <p>At Arista Networks I am a network engineer. I design, deploy and troubleshoot data-centre fabrics for service providers and enterprises. I joined as an intern from Amrita University (Electrical and Computer Engineering, silver medallist) and went full-time in 2023.</p>
+      <p>Outside work I train with weights, practise yoga from the Isha tradition, and read a lot about how people become capable and calm at the same time. This site is where those pieces meet.</p>
     </div>
+  </div>
+</div></section>
 
-    <!-- About Section -->
-    <div data-aos="zoom-out" data-aos-duration="1500" data-aos-easing="ease-in-out">
-    <section id="about">
-      <!-- User Introduction-->
-      <div class="user-details">
-        <h1>My Story</h1>
-        <img
-          class="avatar"
-          src="./assets/img/Professional-Picture-Me.jpg"
-          alt="Professional Me"
-          width="20%"
-        />
-        <p>
-          Hi, I am Vamshi Krishna from Bangalore studying 
-          at the Amrita School of Engineering, pursuing an undergraduate
-          degree. I am majoring in Electrical and Computer Engineering. I am
-          interested in exploring the fields of Software Engineering and embedded systems.
-        </p>
-      </div>
+<section id="built" aria-labelledby="h-built"><div class="sec">
+  <div class="label">What I've built</div>
+  <div>
+    <h2 id="h-built">Systems that run on their own.</h2>
+    <div class="cards">
+      <article class="card"><h3>Agent fleet</h3>
+        <p>Claude Code agents with a lane each: research, coding, monitoring, review, life admin. An orchestrator hands work to the right model for the cost, agents report back to their parent, and everything lands in git so a dead machine can be rebuilt from GitHub.</p>
+        <div class="stack">Claude Code · tmux · Git · shell</div></article>
+      <article class="card"><h3>VajraQuant</h3>
+        <p>An algorithmic trading system for Indian index options. Live execution, broker integrations, a backtesting and research stack, and a React frontend, operated and watched by agents. I am the architect. The agents write and test the code.</p>
+        <div class="stack">Python · React · Docker · broker APIs</div></article>
+      <article class="card"><h3>Tools for my dad's research</h3>
+        <p>Reverse-engineering and automating the analysis software behind my father's decades of market time-cycle research, and building forecasting experiments around it. The method is his. The plumbing is mine.</p>
+        <div class="stack">Python · data pipelines · forecasting</div></article>
+      <article class="card"><h3>Arise</h3>
+        <p>My own life operating system. Workouts, sleep, nutrition and an Apple Watch companion in one app that logs everything once. I built it because every app I tried failed me somewhere.</p>
+        <div class="stack">iPhone · Apple Watch · health data · self-hosted backend</div></article>
+      <article class="card"><h3>The home server</h3>
+        <p>One box that hosts dashboards, DNS filtering, media and every service above. It is treated as disposable: if it dies, the whole thing returns from GitHub plus an encrypted secrets backup.</p>
+        <div class="stack">Docker · nginx · systemd · Git</div></article>
+      <article class="card"><h3>pymusicdl</h3>
+        <p>Open source. Download songs by name, YouTube playlist or Spotify playlist and album. 53 stars on GitHub.</p>
+        <div class="stack"><a href="https://github.com/insaiyancvk/pymusicdl">github.com/insaiyancvk/pymusicdl</a></div></article>
     </div>
+    <p class="earlier">Before agents: computer vision and deep learning side projects, including <a href="https://github.com/insaiyancvk/speedyblackman">an AI that plays NFS Rivals</a>, <a href="https://github.com/insaiyancvk/Artistic-Transfer">text-driven style transfer on segmented images</a>, and <a href="https://github.com/insaiyancvk/stegos_grayfia">a steganography password manager</a>.</p>
+  </div>
+</div></section>
 
-      <!-- User Specifics -->
-      <div class="user">
-        <!-- Technology Stack #1: Languages -->
-        
-        <div class="tech">
-          <h2>Languages</h2>
-          <div data-aos="fade-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
-          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
-          <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-          <i class="devicon-python-plain colored"></i>
-          <i class="devicon-java-plain-wordmark colored"></i>
-          <i class="devicon-cplusplus-plain colored"></i>
-          <i class="devicon-dart-plain colored"></i>
-          <i class="devicon-kotlin-plain colored"></i>
-          <p>
-            My favorite languages for systems programming, web automation, and
-            data analysis.
-          </p>
-        </div>
-      </div>
+<section id="arista" aria-labelledby="h-arista"><div class="sec">
+  <div class="label">At Arista</div>
+  <div>
+    <h2 id="h-arista">Networks at scale.</h2>
+    <ul class="facts">
+      <li><span class="n">368</span><p>switches across 4 data centres, provisioned entirely through CloudVision Studios for a telecom cloud.<small>I owned the contract between the orchestrator and Studios, and wrote the documentation the automation was built on.</small></p></li>
+      <li><span class="n">47</span><p>devices in an EVPN/VXLAN fabric, delivered in one month with Arista Validated Designs.<small>L3 leaf-spine, multi-site, built from code instead of by hand.</small></p></li>
+      <li><span class="n">80%</span><p>of an acceptance test plan automated with ANTA for a national telecom project.<small>Network ready-for-use testing as code, run from a Docker container.</small></p></li>
+      <li><span class="n">400G</span><p>optics and SD-WAN tunnels turned into live dashboards through AQL.<small>ZR optical power and pre-FEC error rates, tunnel loss, latency and jitter, BGP session history.</small></p></li>
+      <li><span class="n">Lab</span><p>My favourite side experiment: steering an EVPN control plane from an external GoBGP controller.<small>It bridged a hardware VTEP fabric and Open vSwitch software VTEPs.</small></p></li>
+    </ul>
+    <div class="badges" aria-label="Recognition"><span>Automations Star 2024</span><span>APAC Delivery Heroes 2025</span><span>Arista Cloud Engineer certified</span><span>EVPN · VXLAN · BGP · CloudVision · AVD</span></div>
+  </div>
+</div></section>
 
-        <!-- Technology Stack #2: Front-End -->
-        <div class="tech">
-          <h2>Front-End</h2>
-          <div data-aos="zoom-in" data-aos-duration="1500" data-aos-easing="ease-in-out">
-          <!-- <i class="devicon-flutter-plain colored"></i> -->
-          <i class="devicon-flutter-plain colored"></i>
-          <i class="devicon-android-plain colored"></i>
-          <p>
-            My preferred technologies for front-end android development and
-            component design.
-          </p>
-        </div>
-      </div>
+<section id="threads" aria-labelledby="h-threads"><div class="sec">
+  <div class="label">Threads</div>
+  <div>
+    <h2 id="h-threads">Everything connects.</h2>
+    <div class="prose"><p>I do not keep my interests in separate drawers. Pick a topic below and see what it touches.</p></div>
+    <div class="threads">
+      <svg class="map" id="map" viewBox="0 0 460 400" role="img" aria-label="A map linking trading, Adiyogi, flows, VXLAN, VPN, gym, agents and discipline"></svg>
+      <ul class="pairs" id="pairs"></ul>
+    </div>
+    <p class="note">Short notes will land here, one idea each, no padding.</p>
+  </div>
+</div></section>
 
-        <!-- Technology Stack #3: Tools -->
-        
-        <div class="tech">
-          <h2>Tools</h2>
-          <div data-aos="fade-down-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
-          <i class="devicon-git-plain colored"></i>
-          <i class="devicon-visualstudio-plain colored"></i>
-          <i class="devicon-github-plain colored"></i>
-          <i class="devicon-linux-plain colored"></i>
-          <i class="devicon-jupyter-plain colored"></i>
-          <span class="iconify" data-icon="logos-pytorch" data-inline="false"></span>
-          <p>
-            My favorite tools for version control, code editing, and deep learning.
-          </p>
-        </div>
-      </div>
-      </div>
-    </section>
+<section id="contact" aria-labelledby="h-contact"><div class="sec">
+  <div class="label">Say hello</div>
+  <div>
+    <h2 id="h-contact">Let's talk.</h2>
+    <p class="mail"><a href="mailto:cvamshik1@gmail.com">cvamshik1@gmail.com</a></p>
+    <div class="contact">
+      <a href="https://www.linkedin.com/in/insaiyancvk/" rel="me">LinkedIn</a>
+      <a href="https://github.com/insaiyancvk" rel="me">GitHub</a>
+      <a href="https://x.com/insaiyancvk" rel="me">X</a>
+      <a href="https://t.me/insaiyancvk" rel="me">Telegram</a>
+    </div>
+  </div>
+</div></section>
+</main>
 
-    <footer class="footer">
-      <p>&copy; C Vamshi Krishna, 2022</p>
-    </footer>
+<footer><span>© 2026 Vamshi Krishna</span><span>Written by me. Built with agents.</span></footer>
+</div>
 
-    <!-- Import JS: Particles Theme -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <!-- Import JS: Sweet Scroll -->
-    <script src="./assets/js/sweet-scroll.min.js"></script>
-    <!-- Import JS: Google Analytics -->
-    <script src="./assets/js/google-analytics.js"></script>
-    <!-- Import JS: Typed.js -->
-    <script src="./assets/js/typed.js"></script>
-    <script>
-      var typed5 = new Typed("#typed", 
-      {
-        
-        strings: ["Python Developer", "AI based art generation", "Deep Learning","Computer Vision","Open source enthusiast","Otaku"],
-        stringsElement: '#typed-string',
-        typeSpeed: 80,
-        backSpeed: 80,
-        backDelay: 1800,
-        loop: true,
-        showCursor: false,
-        contentType: null,
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Hero: light the sentence word by word, accent on the topic words.
+  var b=document.getElementById('breath');
+  if(b&&!reduce){
+    var nodes=[].slice.call(b.childNodes),out=document.createDocumentFragment(),words=[];
+    nodes.forEach(function(n){
+      var hot=n.nodeType===1&&n.classList.contains('k');
+      n.textContent.split(/(\s+)/).forEach(function(p){
+        if(!p) return;
+        if(/^\s+$/.test(p)){out.appendChild(document.createTextNode(p));return;}
+        var s=document.createElement('span');s.className='w';s.textContent=p;s.dataset.hot=hot?'1':'';
+        out.appendChild(s);words.push(s);
       });
-    </script>
-    <!-- Import JS: Main Script -->
-    <script src="./assets/js/main.js"></script>
+    });
+    b.textContent='';b.appendChild(out);
+    var i=0;
+    (function tick(){
+      if(i<words.length){var w=words[i++];w.classList.add('on');if(w.dataset.hot)w.classList.add('hot');setTimeout(tick,w.dataset.hot?170:60);}
+    })();
+    // Everything shows at rest if the tab is hidden or the timers are throttled.
+    setTimeout(function(){words.forEach(function(w){w.classList.add('on');if(w.dataset.hot)w.classList.add('hot');});},4500);
+  } else if(b){ [].forEach.call(b.querySelectorAll('.k'),function(k){k.style.color='var(--accent)';}); }
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-
-  </body>
+  // Threads map.
+  var N=[['trading','Trading'],['adiyogi','Adiyogi'],['flows','Flows'],['vxlan','VXLAN'],['vpn','VPN'],['gym','Gym'],['agents','Agents'],['discipline','Discipline']];
+  var E=[
+   ['trading','flows','Trading systems and network traffic','Both are flow under load: orders in one, packets in the other. Reliability is the whole job.'],
+   ['vxlan','vpn','VXLAN and VPN','Both wrap one network inside another, so the outside only ever sees the wrapper.'],
+   ['gym','agents','Gym and agents','Progressive overload and an agent loop are the same idea: a small measured step, check the result, repeat.'],
+   ['discipline','adiyogi','Discipline and Adiyogi','Practice is what I can count. What it points at is what I cannot. That is the difference between counting and not counting.'],
+   ['agents','trading','Agents and trading','An agent that watches a system all day is a tireless operator. My job is deciding what it may touch.'],
+   ['flows','vxlan','Flows and VXLAN','Tracing a packet through an overlay is the same skill as tracing an order through a system: follow the headers, trust nothing.']
+  ];
+  var svg=document.getElementById('map'),list=document.getElementById('pairs'),NS='http://www.w3.org/2000/svg';
+  var cx=230,cy=200,r=140,pos={};
+  N.forEach(function(n,i){var a=-Math.PI/2+i*2*Math.PI/N.length;pos[n[0]]={x:cx+r*Math.cos(a),y:cy+r*Math.sin(a),c:Math.cos(a),s:Math.sin(a)};});
+  function el(t,at,p){var e=document.createElementNS(NS,t);for(var k in at)e.setAttribute(k,at[k]);(p||svg).appendChild(e);return e;}
+  var edges=E.map(function(e,i){var a=pos[e[0]],b2=pos[e[1]];return el('line',{x1:a.x,y1:a.y,x2:b2.x,y2:b2.y,'class':'e'});});
+  var gs={};
+  N.forEach(function(n){
+    var p=pos[n[0]],g=el('g',{'class':'n',tabindex:'0',role:'button','aria-label':n[1]+': show connections'});
+    el('circle',{cx:p.x,cy:p.y,r:9,'class':'nd'},g);
+    var anchor=p.c>0.3?'start':(p.c<-0.3?'end':'middle'),dx=p.c>0.3?16:(p.c<-0.3?-16:0),dy=Math.abs(p.c)<=0.3?(p.s<0?-18:28):5;
+    var t=el('text',{x:p.x+dx,y:p.y+dy,'text-anchor':anchor},g);t.textContent=n[1];
+    gs[n[0]]=g;
+  });
+  var items=E.map(function(e){var li=document.createElement('li');li.innerHTML='<b></b><p></p>';li.firstChild.textContent=e[2];li.lastChild.textContent=e[3];list.appendChild(li);return li;});
+  var sel=null;
+  function show(){
+    var on={};
+    E.forEach(function(e,i){var hit=!sel||e[0]===sel||e[1]===sel;edges[i].classList.toggle('on',!!sel&&hit);items[i].classList.toggle('on',!!sel&&hit);if(sel&&hit){on[e[0]]=1;on[e[1]]=1;}});
+    N.forEach(function(n){gs[n[0]].classList.toggle('on',n[0]===sel);gs[n[0]].classList.toggle('dim',!!sel&&!on[n[0]]);});
+  }
+  N.forEach(function(n){
+    var g=gs[n[0]];
+    g.addEventListener('click',function(){sel=sel===n[0]?null:n[0];show();});
+    g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();sel=sel===n[0]?null:n[0];show();}});
+  });
+  E.forEach(function(e,i){
+    items[i].addEventListener('mouseenter',function(){edges[i].classList.add('on');});
+    items[i].addEventListener('mouseleave',function(){if(!sel)edges[i].classList.remove('on');else show();});
+  });
+  // Resting state: every connection is readable; first one is highlighted so the map looks alive.
+  sel='trading';show();
+})();
+</script>
+</body>
 </html>
