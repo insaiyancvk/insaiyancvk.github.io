@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agent fleet — insaiyancvk</title>
+<meta name="description" content="How I run dozens of Claude Code agents across my projects: lanes, model tiers, reporting and cost discipline.">
+<meta name="author" content="Vamshi Krishna">
+<link rel="canonical" href="https://insaiyancvk.github.io/built/agent-fleet.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0c0d0f">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="insaiyancvk">
+<meta property="og:title" content="Agent fleet — insaiyancvk">
+<meta property="og:description" content="How I run dozens of Claude Code agents across my projects: lanes, model tiers, reporting and cost discipline.">
+<meta property="og:url" content="https://insaiyancvk.github.io/built/agent-fleet.html">
+<meta property="og:image" content="https://insaiyancvk.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="brand" href="../index.html" aria-label="insaiyancvk, home">insaiyan<i>cvk</i></a>
+  <ul>
+    <li><a href="../index.html#built">Built</a></li>
+    <li><a href="../index.html#arista">Arista</a></li>
+    <li><a href="../index.html#threads">Threads</a></li>
+    <li><a href="../assets/Vamshi-Krishna-Resume.pdf">Resume</a></li>
+  </ul>
+</nav>
+<main id="main">
+<header class="hero" style="padding-block:clamp(28px,6vw,70px) clamp(32px,5vw,56px)">
+  <div class="crumb"><a href="../index.html#built">← What I've built</a></div>
+  <h1 class="page-h1">Agent fleet</h1>
+  <p class="lede">A team of AI agents I manage the way you would manage people: clear lanes, the right seniority for each job, and a rule that every agent reports back.</p>
+</header>
+<section><div class="sec">
+  <div class="label">Why</div>
+  <div>
+    <h2>One person, many projects</h2>
+    <div class="prose"><p>I run a job, a trading system, a life-tracking app, research for my dad and a home server. No single conversation with an AI can hold all of that, and a single long session gets slow and expensive. So I split the work into lanes. Each lane is a separate agent session with its own folder, its own memory and one job.</p></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">How it works</div>
+  <div>
+    <h2>Lanes, tiers and a chain of command</h2>
+    <div class="prose"><ul class="flow" aria-label="Pipeline stages"><li class="">Me</li><li class="ar" aria-hidden="true">→</li><li class="hl">Orchestrator</li><li class="ar" aria-hidden="true">→</li><li class="">Project architect</li><li class="ar" aria-hidden="true">→</li><li class="">Builder lane</li><li class="ar" aria-hidden="true">→</li><li class="">Reviewer lane</li></ul><p>An orchestrator agent knows every project and spawns lanes when work needs a dedicated mind. Each lane is a terminal session I can attach to from my phone. Lanes are named after what they do, so the fleet reads like an org chart.</p><p>The most capable model acts as the manager of a project: it keeps the architecture and judgement work and hands everything routine to cheaper models. A monitoring lane runs on a mid-tier model. Deep research gets the strongest model. Every spawned lane is given a tier, with one line explaining why.</p><div class="kv"><div><b>Model tiers</b><span>Small, mid, large and research-grade models, each priced and assigned on purpose.</span></div><div><b>Reporting</b><span>A lane that finishes or gets blocked messages its parent immediately. A timer is only the fallback.</span></div><div><b>Usage budget</b><span>Every agent sees the shared plan usage, estimates a task before starting, and measures the real cost after.</span></div><div><b>Hard lines</b><span>Anything touching real money is changed by the senior lanes only. Monitoring lanes watch and escalate.</span></div></div></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">What is interesting</div>
+  <div>
+    <h2>The problems are management problems</h2>
+    <div class="prose"><ul><li><b>Cost is a design constraint.</b> A cheap call that needs three retries is not cheap. Lanes escalate early instead of struggling.</li><li><b>Context is the scarce resource.</b> Handoff documents let a lane clear its context and resume cleanly instead of dragging a huge history along.</li><li><b>Trust, then verify.</b> Work is not done until it is merged, reported and checked by something that is not the agent that wrote it.</li><li><b>The box is disposable.</b> Everything durable lives in GitHub plus an encrypted secrets backup, so a dead machine can be rebuilt from scratch. A push gate scans for secrets before anything leaves.</li><li><b>Human attention is rationed.</b> When an agent is blocked on me it sends a phone notification with a one-tap link. Otherwise it keeps going.</li></ul></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">Stack</div>
+  <div>
+    <h2>What it runs on</h2>
+    <div class="prose"><p>Claude Code, tmux, git, shell scripts, systemd timers and a small set of hooks and skills I wrote so agents can wake each other, hand off work and publish pages. A shared gallery collects every report the agents produce.</p></div>
+  </div>
+</div></section>
+</main>
+<footer style="flex-direction:column;align-items:stretch;gap:10px">
+  <div class="pn"><a href="pymusicdl.html">← pymusicdl</a><a href="vajraquant.html">VajraQuant →</a></div>
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>© 2026 Vamshi Krishna</span><span>Written by me. Built with agents.</span></div>
+</footer>
+</div>
+</body>
+</html>

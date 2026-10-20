@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The home server — insaiyancvk</title>
+<meta name="description" content="A self-hosted box that runs my dashboards, DNS, media and agents, designed to be rebuilt from scratch.">
+<meta name="author" content="Vamshi Krishna">
+<link rel="canonical" href="https://insaiyancvk.github.io/built/home-server.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0c0d0f">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="insaiyancvk">
+<meta property="og:title" content="The home server — insaiyancvk">
+<meta property="og:description" content="A self-hosted box that runs my dashboards, DNS, media and agents, designed to be rebuilt from scratch.">
+<meta property="og:url" content="https://insaiyancvk.github.io/built/home-server.html">
+<meta property="og:image" content="https://insaiyancvk.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="brand" href="../index.html" aria-label="insaiyancvk, home">insaiyan<i>cvk</i></a>
+  <ul>
+    <li><a href="../index.html#built">Built</a></li>
+    <li><a href="../index.html#arista">Arista</a></li>
+    <li><a href="../index.html#threads">Threads</a></li>
+    <li><a href="../assets/Vamshi-Krishna-Resume.pdf">Resume</a></li>
+  </ul>
+</nav>
+<main id="main">
+<header class="hero" style="padding-block:clamp(28px,6vw,70px) clamp(32px,5vw,56px)">
+  <div class="crumb"><a href="../index.html#built">← What I've built</a></div>
+  <h1 class="page-h1">The home server</h1>
+  <p class="lede">One machine runs everything I have built, and I treat it as disposable: if it dies, it comes back from GitHub.</p>
+</header>
+<section><div class="sec">
+  <div class="label">Why</div>
+  <div>
+    <h2>One dead disk should cost me nothing</h2>
+    <div class="prose"><p>That is the rule I build by. Nothing on the machine is allowed to be the only copy. Code, agent prompts, memory notes, timers, service units and configs all live in private repositories, pushed in the same session they are created.</p></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">What runs on it</div>
+  <div>
+    <h2>The services</h2>
+    <div class="prose"><div class="kv"><div><b>Launcher</b><span>A single home dashboard that links every tool.</span></div><div><b>DNS</b><span>Network-wide ad and tracker blocking.</span></div><div><b>Media</b><span>A personal media server for the family.</span></div><div><b>Dashboards</b><span>Git statistics, expense tracking, health data and a gallery for every report the agents publish.</span></div><div><b>Timers</b><span>Scheduled jobs and units managed by systemd.</span></div><div><b>Reverse proxy</b><span>Nginx handles routing and certificates.</span></div></div></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">How it stays safe</div>
+  <div>
+    <h2>Rebuild, do not repair</h2>
+    <div class="prose"><ul><li>A master repository can set the machine up from nothing and clones every other repository.</li><li>Secrets never enter git in plain text. They travel through an encrypted backup.</li><li>A pre-push gate scans every push for keys and tokens.</li><li>Registering a new service is part of building it, so the rebuild plan never goes stale.</li></ul></div>
+  </div>
+</div></section>
+</main>
+<footer style="flex-direction:column;align-items:stretch;gap:10px">
+  <div class="pn"><a href="arise.html">← Arise</a><a href="pymusicdl.html">pymusicdl →</a></div>
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>© 2026 Vamshi Krishna</span><span>Written by me. Built with agents.</span></div>
+</footer>
+</div>
+</body>
+</html>
