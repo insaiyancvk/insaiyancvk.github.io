@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VajraQuant — insaiyancvk</title>
+<meta name="description" content="The architecture behind VajraQuant: a microservice trading platform for Indian index options, built and operated with AI agents.">
+<meta name="author" content="Vamshi Krishna">
+<link rel="canonical" href="https://insaiyancvk.github.io/built/vajraquant.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0c0d0f">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="insaiyancvk">
+<meta property="og:title" content="VajraQuant — insaiyancvk">
+<meta property="og:description" content="The architecture behind VajraQuant: a microservice trading platform for Indian index options, built and operated with AI agents.">
+<meta property="og:url" content="https://insaiyancvk.github.io/built/vajraquant.html">
+<meta property="og:image" content="https://insaiyancvk.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="brand" href="../index.html" aria-label="insaiyancvk, home">insaiyan<i>cvk</i></a>
+  <ul>
+    <li><a href="../index.html#built">Built</a></li>
+    <li><a href="../index.html#arista">Arista</a></li>
+    <li><a href="../index.html#threads">Threads</a></li>
+    <li><a href="../assets/Vamshi-Krishna-Resume.pdf">Resume</a></li>
+  </ul>
+</nav>
+<main id="main">
+<header class="hero" style="padding-block:clamp(28px,6vw,70px) clamp(32px,5vw,56px)">
+  <div class="crumb"><a href="../index.html#built">← What I've built</a></div>
+  <h1 class="page-h1">VajraQuant</h1>
+  <p class="lede">An event-driven trading platform for Indian index options, built as small services that talk through Redis Streams and watched by agents all day.</p>
+</header>
+<section><div class="sec">
+  <div class="label">The idea</div>
+  <div>
+    <h2>Engineering first</h2>
+    <div class="prose"><p>VajraQuant started as the question of whether I could build institutional-style infrastructure on my own: live data in, decisions out, every step observable. I am the architect. I decide how it is shaped, what it is allowed to do and what counts as done. Agents write, test and watch the code, and I review about an hour of it a day.</p><p>This page is about the engineering. It deliberately has no performance numbers.</p></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">Pipeline</div>
+  <div>
+    <h2>From tick to signal</h2>
+    <div class="prose"><ul class="flow" aria-label="Pipeline stages"><li class="">Broker stream</li><li class="ar" aria-hidden="true">→</li><li class="">Tick ingestion</li><li class="ar" aria-hidden="true">→</li><li class="">1-minute candles</li><li class="ar" aria-hidden="true">→</li><li class="">Interval candles</li><li class="ar" aria-hidden="true">→</li><li class="hl">Indicator engine</li><li class="ar" aria-hidden="true">→</li><li class="">Orchestrator</li><li class="ar" aria-hidden="true">→</li><li class="">Trader</li></ul><p>Every stage is its own container. Redis Streams carry the data between them, with consumer groups, crash recovery for pending messages and per-stream time limits so memory never grows unbounded. Messages are packed in a binary format and ordered by timestamp-based IDs, so history can be rebuilt out of order without breaking anything.</p></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">Under the hood</div>
+  <div>
+    <h2>What the platform contains</h2>
+    <div class="prose"><div class="kv"><div><b>Services</b><span>About twenty containers: authentication, historical data, option chains, a direction engine, a funds service, indicator computation, an orchestrator and a trader.</span></div><div><b>Speed</b><span>A tick-to-signal latency budget of under 50 ms, protected by performance tests. Indicator maths is compiled ahead of time with Numba.</span></div><div><b>Observability</b><span>Prometheus scrapes every service and Grafana draws it.</span></div><div><b>Testing</b><span>A mock broker replays market data so the whole pipeline can be exercised without touching a real one.</span></div><div><b>Frontend</b><span>A React interface for monitoring and controlling the system.</span></div><div><b>Research</b><span>A separate backtesting project and an R&D catalogue keep research away from the live path.</span></div></div></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">What is interesting</div>
+  <div>
+    <h2>Operating it matters more than writing it</h2>
+    <div class="prose"><ul><li><b>Boring beats clever.</b> Reconciling state with rate-limited external APIs is the hard part. Retries, idempotency and clear ownership of each key do more than any model.</li><li><b>Everything is a stream.</b> One convention for keys and timestamps made services easy to replace and agents easy to point at.</li><li><b>Real-money code has a fence.</b> Only the most senior agent lanes may change what touches the live path. Everything else watches and escalates.</li></ul></div>
+  </div>
+</div></section>
+</main>
+<footer style="flex-direction:column;align-items:stretch;gap:10px">
+  <div class="pn"><a href="agent-fleet.html">← Agent fleet</a><a href="dad-tools.html">Tools for my dad's research →</a></div>
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>© 2026 Vamshi Krishna</span><span>Written by me. Built with agents.</span></div>
+</footer>
+</div>
+</body>
+</html>

@@ -24,110 +24,18 @@
 <link rel="preload" href="assets/fonts/InstrumentSerif-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/Geist-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Vamshi Krishna","url":"https://insaiyancvk.github.io/","jobTitle":"Network engineer","worksFor":{"@type":"Organization","name":"Arista Networks"},"address":{"@type":"PostalAddress","addressLocality":"Bangalore","addressCountry":"IN"},"sameAs":["https://github.com/insaiyancvk","https://www.linkedin.com/in/insaiyancvk/","https://x.com/insaiyancvk"]}</script>
-<style>
-@font-face{font-family:'Geist';font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/Geist-normal.woff2) format('woff2')}
-@font-face{font-family:'Geist Mono';font-style:normal;font-weight:100 900;font-display:swap;src:url(assets/fonts/GeistMono-normal.woff2) format('woff2')}
-@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(assets/fonts/InstrumentSerif-normal.woff2) format('woff2')}
-@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(assets/fonts/InstrumentSerif-italic.woff2) format('woff2')}
-
-/* Layout: left-aligned editorial column. Mono rail labels on the left, serif display, one saffron accent used for connections. */
-:root{
-  --bg:#0c0d0f; --fg:#ebe8e1; --mute:#8d8c86; --line:#24262b; --card:#131418;
-  --accent:#ff9f1c; --accent-soft:rgba(255,159,28,.14);
-  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
-  --sans:'Geist',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --mono:'Geist Mono',ui-monospace,Menlo,Consolas,monospace;
-  color-scheme:dark;
-}
-@media (prefers-color-scheme:light){:root{
-  --bg:#f3f4f5; --fg:#121316; --mute:#5f6269; --line:#d9dbde; --card:#fff;
-  --accent:#b85c00; --accent-soft:rgba(184,92,0,.12); color-scheme:light}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);overflow-x:hidden;
-  padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
-a:hover{color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--accent);color:#111;padding:8px 12px;z-index:9}
-.skip:focus{left:8px}
-.wrap{max-width:1040px;margin:0 auto}
-.mono{font-family:var(--mono)}
-.label{font:500 12px/1.2 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-
-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;font:500 13px var(--mono)}
-nav .mark{font-family:var(--serif);font-size:26px;text-decoration:none;letter-spacing:-.01em}
-nav ul{display:flex;gap:clamp(12px,3vw,28px);list-style:none;margin:0;padding:0}
-nav a{text-decoration:none;color:var(--mute)} nav a:hover{color:var(--fg)}
-
-.hero{padding-block:clamp(40px,9vw,110px) clamp(48px,8vw,96px);display:flex;flex-direction:column;gap:clamp(24px,4vw,40px)}
-h1{font:400 clamp(3.4rem,13.5vw,9rem)/.88 var(--serif);letter-spacing:-.035em;margin:0;text-wrap:balance}
-h1 em{color:var(--accent)}
-.lede{max-width:34ch;font-size:clamp(1.15rem,3.6vw,1.5rem);line-height:1.4;margin:0}
-.lede span{color:var(--mute)}
-.breath{font:italic 400 clamp(1.45rem,5.2vw,2.6rem)/1.22 var(--serif);max-width:26em;margin:0;color:var(--mute);text-wrap:pretty}
-.breath .w{transition:color .5s ease}
-.breath .w.on{color:var(--fg)}
-.breath .w.hot{color:var(--accent)}
-
-section{padding-block:clamp(36px,6vw,72px);border-top:1px solid var(--line)}
-.sec{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
-@media (min-width:820px){.sec{grid-template-columns:180px minmax(0,1fr);gap:40px}}
-h2{font:400 clamp(2rem,6vw,3.4rem)/1 var(--serif);letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
-.prose{display:flex;flex-direction:column;gap:16px;max-width:62ch}
-.prose p{margin:0}
-
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px;margin-top:8px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:22px;display:flex;flex-direction:column;gap:10px;min-width:0;transition:border-color .25s,transform .25s}
-.card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.card h3{font:400 1.9rem/1 var(--serif);margin:0;letter-spacing:-.01em}
-.card p{margin:0;color:var(--mute);font-size:.97rem}
-.card .stack{margin-top:auto;padding-top:6px;font:400 12px/1.5 var(--mono);color:var(--accent)}
-.earlier{margin-top:22px;color:var(--mute);font-size:.95rem;max-width:62ch}
-
-.facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.facts li{display:grid;grid-template-columns:minmax(76px,120px) minmax(0,1fr);gap:8px 20px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
-.facts .n{font:400 clamp(2.4rem,8vw,3.6rem)/.9 var(--serif);color:var(--accent);letter-spacing:-.02em}
-.facts p{margin:0}
-.facts p small{display:block;color:var(--mute);font-size:.92rem;margin-top:4px}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.badges span{font:500 12px var(--mono);border:1px solid var(--line);padding:7px 11px;border-radius:99px;color:var(--mute)}
-
-.threads{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:6px}
-@media (min-width:900px){.threads{grid-template-columns:minmax(0,460px) minmax(0,1fr);align-items:start}}
-svg.map{width:100%;height:auto;max-width:520px;display:block;overflow:visible}
-.map .e{stroke:var(--line);stroke-width:1.2;transition:stroke .25s,stroke-width .25s}
-.map .e.on{stroke:var(--accent);stroke-width:2.2}
-.map .nd{fill:var(--bg);stroke:var(--mute);stroke-width:1.5;transition:fill .25s,stroke .25s}
-.map g.n{cursor:pointer;outline:none}
-.map g.n.on .nd,.map g.n:focus-visible .nd{fill:var(--accent);stroke:var(--accent)}
-.map text{font:500 12.5px var(--mono);fill:var(--fg)}
-.map g.dim text{fill:var(--mute)}
-.pairs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
-.pairs li{padding:14px 14px;border-left:2px solid var(--line);transition:border-color .25s,background .25s}
-.pairs li.on{border-color:var(--accent);background:var(--accent-soft)}
-.pairs b{display:block;font:500 12px/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
-.pairs p{margin:0;color:var(--mute);font-size:.97rem}
-.note{color:var(--mute);font-size:.95rem;margin-top:18px;max-width:62ch}
-
-.contact{display:flex;flex-wrap:wrap;gap:10px 14px;font:500 14px var(--mono);margin-top:6px}
-.contact a{padding:10px 14px;border:1px solid var(--line);border-radius:99px;text-decoration:none}
-.contact a:hover{border-color:var(--accent);color:var(--fg)}
-.mail{font:400 clamp(1.4rem,5vw,2.4rem)/1.1 var(--serif);margin:0 0 18px;overflow-wrap:anywhere}
-footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--mute);font:400 12.5px/1.6 var(--mono);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.card,.breath .w,.map *{transition:none}}
-</style>
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="wrap">
 <nav aria-label="Main">
-  <a class="mark" href="#top" aria-label="Vamshi Krishna, top of page">vk</a>
+  <a class="brand" href="#top" aria-label="insaiyancvk, top of page">insaiyan<i>cvk</i></a>
   <ul>
     <li><a href="#built">Built</a></li>
     <li><a href="#arista">Arista</a></li>
     <li><a href="#threads">Threads</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="assets/Vamshi-Krishna-Resume.pdf">Resume</a></li>
   </ul>
 </nav>
 
@@ -136,6 +44,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--mute
   <div class="label">Bangalore · builder · network engineer</div>
   <h1>Vamshi<br><em>Krishna</em></h1>
   <p class="lede">I build with AI agents. At Arista I deploy data-centre networks. <span>The rest of the time I lift, sit still, and try to see how it all connects.</span></p>
+  <div class="actions"><a class="btn" href="assets/Vamshi-Krishna-Resume.pdf">Resume (PDF)</a><a class="btn ghost" href="#built">What I've built</a></div>
   <p class="breath" id="breath" aria-label="In a single breath I can talk about trading systems, Adiyogi, traffic flows through a VXLAN fabric, a VPN, and the gym.">In a single breath I can talk about <span class="k">trading systems</span>, <span class="k">Adiyogi</span>, <span class="k">traffic flows</span> through a <span class="k">VXLAN</span> fabric, a <span class="k">VPN</span>, and the <span class="k">gym</span>. It is all one subject.</p>
 </header>
 
@@ -156,23 +65,29 @@ footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--mute
   <div>
     <h2 id="h-built">Systems that run on their own.</h2>
     <div class="cards">
-      <article class="card"><h3>Agent fleet</h3>
+      <article class="card"><h3><a href="built/agent-fleet.html" style="text-decoration:none">Agent fleet</a></h3>
         <p>Claude Code agents with a lane each: research, coding, monitoring, review, life admin. An orchestrator hands work to the right model for the cost, agents report back to their parent, and everything lands in git so a dead machine can be rebuilt from GitHub.</p>
+        <a class="more" href="built/agent-fleet.html">Read the story →</a>
         <div class="stack">Claude Code · tmux · Git · shell</div></article>
-      <article class="card"><h3>VajraQuant</h3>
+      <article class="card"><h3><a href="built/vajraquant.html" style="text-decoration:none">VajraQuant</a></h3>
         <p>An algorithmic trading system for Indian index options. Live execution, broker integrations, a backtesting and research stack, and a React frontend, operated and watched by agents. I am the architect. The agents write and test the code.</p>
+        <a class="more" href="built/vajraquant.html">Read the story →</a>
         <div class="stack">Python · React · Docker · broker APIs</div></article>
-      <article class="card"><h3>Tools for my dad's research</h3>
+      <article class="card"><h3><a href="built/dad-tools.html" style="text-decoration:none">Tools for my dad's research</a></h3>
         <p>Reverse-engineering and automating the analysis software behind my father's decades of market time-cycle research, and building forecasting experiments around it. The method is his. The plumbing is mine.</p>
+        <a class="more" href="built/dad-tools.html">Read the story →</a>
         <div class="stack">Python · data pipelines · forecasting</div></article>
-      <article class="card"><h3>Arise</h3>
+      <article class="card"><h3><a href="built/arise.html" style="text-decoration:none">Arise</a></h3>
         <p>My own life operating system. Workouts, sleep, nutrition and an Apple Watch companion in one app that logs everything once. I built it because every app I tried failed me somewhere.</p>
+        <a class="more" href="built/arise.html">Read the story →</a>
         <div class="stack">iPhone · Apple Watch · health data · self-hosted backend</div></article>
-      <article class="card"><h3>The home server</h3>
+      <article class="card"><h3><a href="built/home-server.html" style="text-decoration:none">The home server</a></h3>
         <p>One box that hosts dashboards, DNS filtering, media and every service above. It is treated as disposable: if it dies, the whole thing returns from GitHub plus an encrypted secrets backup.</p>
+        <a class="more" href="built/home-server.html">Read the story →</a>
         <div class="stack">Docker · nginx · systemd · Git</div></article>
-      <article class="card"><h3>pymusicdl</h3>
+      <article class="card"><h3><a href="built/pymusicdl.html" style="text-decoration:none">pymusicdl</a></h3>
         <p>Open source. Download songs by name, YouTube playlist or Spotify playlist and album. 53 stars on GitHub.</p>
+        <a class="more" href="built/pymusicdl.html">Read the story →</a>
         <div class="stack"><a href="https://github.com/insaiyancvk/pymusicdl">github.com/insaiyancvk/pymusicdl</a></div></article>
     </div>
     <p class="earlier">Before agents: computer vision and deep learning side projects, including <a href="https://github.com/insaiyancvk/speedyblackman">an AI that plays NFS Rivals</a>, <a href="https://github.com/insaiyancvk/Artistic-Transfer">text-driven style transfer on segmented images</a>, and <a href="https://github.com/insaiyancvk/stegos_grayfia">a steganography password manager</a>.</p>
@@ -217,6 +132,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 48px;color:var(--mute
       <a href="https://github.com/insaiyancvk" rel="me">GitHub</a>
       <a href="https://x.com/insaiyancvk" rel="me">X</a>
       <a href="https://t.me/insaiyancvk" rel="me">Telegram</a>
+      <a href="assets/Vamshi-Krishna-Resume.pdf">Resume (PDF)</a>
     </div>
   </div>
 </div></section>

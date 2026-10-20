@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tools for my dad's research — insaiyancvk</title>
+<meta name="description" content="Automation, scoring and TradingView indicators I build to support my father's market research.">
+<meta name="author" content="Vamshi Krishna">
+<link rel="canonical" href="https://insaiyancvk.github.io/built/dad-tools.html">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0c0d0f">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="insaiyancvk">
+<meta property="og:title" content="Tools for my dad's research — insaiyancvk">
+<meta property="og:description" content="Automation, scoring and TradingView indicators I build to support my father's market research.">
+<meta property="og:url" content="https://insaiyancvk.github.io/built/dad-tools.html">
+<meta property="og:image" content="https://insaiyancvk.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="brand" href="../index.html" aria-label="insaiyancvk, home">insaiyan<i>cvk</i></a>
+  <ul>
+    <li><a href="../index.html#built">Built</a></li>
+    <li><a href="../index.html#arista">Arista</a></li>
+    <li><a href="../index.html#threads">Threads</a></li>
+    <li><a href="../assets/Vamshi-Krishna-Resume.pdf">Resume</a></li>
+  </ul>
+</nav>
+<main id="main">
+<header class="hero" style="padding-block:clamp(28px,6vw,70px) clamp(32px,5vw,56px)">
+  <div class="crumb"><a href="../index.html#built">← What I've built</a></div>
+  <h1 class="page-h1">Tools for my dad's research</h1>
+  <p class="lede">My father has spent decades studying market time cycles. I build the tooling around his work: automation, checks and indicators he can verify on his own screen.</p>
+</header>
+<section><div class="sec">
+  <div class="label">Why</div>
+  <div>
+    <h2>Plumbing for a craft</h2>
+    <div class="prose"><p>The method is his and it stays his. What I can do is remove the friction around it: repetitive screen work, hard-to-compare outputs and indicators he has to draw by hand.</p></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">What I built</div>
+  <div>
+    <h2>Three kinds of help</h2>
+    <div class="prose"><ul><li><b>Automating a desktop analysis program.</b> The software he trusts is a desktop application with no API. I built agents that drive its interface step by step to produce the monthly forecast chart, so the run happens on its own.</li><li><b>Honest scoring.</b> A forecasting harness that checks any prediction method out-of-sample, walk-forward, against a random-walk baseline. His own question was simple: does it get the direction between two timestamps right? That question became the metric.</li><li><b>Indicators on his chart.</b> A growing library of TradingView indicators written in Pine Script from his written specifications. He verifies each one on TradingView before it counts as done.</li></ul></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">What is interesting</div>
+  <div>
+    <h2>A good spec is the product</h2>
+    <div class="prose"><p>The work runs through documents: a method written up, turned into a spec, turned into code, checked by the person who knows it best. The lesson is that building for an expert is mostly about making their judgement the final test, and never replacing it.</p></div>
+  </div>
+</div></section>
+<section><div class="sec">
+  <div class="label">Stack</div>
+  <div>
+    <h2>What it uses</h2>
+    <div class="prose"><p>Python, k-nearest-neighbour and ridge models for experiments, Pine Script for charts, a small MCP server so agents can read TradingView, and screen-driving automation for the desktop program.</p></div>
+  </div>
+</div></section>
+</main>
+<footer style="flex-direction:column;align-items:stretch;gap:10px">
+  <div class="pn"><a href="vajraquant.html">← VajraQuant</a><a href="arise.html">Arise →</a></div>
+  <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px"><span>© 2026 Vamshi Krishna</span><span>Written by me. Built with agents.</span></div>
+</footer>
+</div>
+</body>
+</html>
